@@ -5,24 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class wishlist extends Model
+class Wishlist extends Model
 {
     use HasFactory;
+    protected $table = 'wishlist';
 
-    protected $table = 'wishlist_product';
-    protected $fillable = [
-        'user_id',
-        'product_id',
-        'product_description',
-        'product_name',
-        'votes',
-    ];
+    public function dataOne(){
+        return $this->belongsTo(User::class, 'user_id');
+    }
 
-    protected $casts = [
-        'user_id' => 'integer',
-        'product_id' => 'integer',
-        'product_description' => 'string',
-        'product_name' => 'string',
-        'votes' => 'integer',
-    ];
+    public function dataTwo(){
+        return $this->belongsTo(Product::class, 'product_id');
+    }
+
+    public function postOne(){
+        return $this->hasMany(Wishlist::class, 'user_id');  
+    }
 }

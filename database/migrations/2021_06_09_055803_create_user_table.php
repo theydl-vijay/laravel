@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCrudTable extends Migration
+class CreateUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateCrudTable extends Migration
      */
     public function up()
     {
-        Schema::create('crud', function (Blueprint $table) {
-           $table->id();
-            $table->string('name');
-            $table->string('email');
-            $table->enum('role', ['client', 'admin', 'user']);
-            $table->enum('gender', ['male', 'female']);
+        Schema::create('user', function (Blueprint $table) {
+            $table->id();
+            $table->string('name', 50);
+            $table->string('email', 50);
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateCrudTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('crud');
+        Schema::dropIfExists('user');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserSeedTable extends Migration
+class CreateWishlistTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateUserSeedTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_seed', function (Blueprint $table) {
+        Schema::create('wishlist', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->Enum('roles',['client', 'admin']);
-            $table->string('email');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('user');
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('product');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateUserSeedTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_seed');
+        Schema::dropIfExists('wishlist');
     }
 }

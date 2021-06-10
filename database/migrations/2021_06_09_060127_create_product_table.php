@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddActiveToUserTable extends Migration
+class CreateProductTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class AddActiveToUserTable extends Migration
      */
     public function up()
     {
-        Schema::table('user', function (Blueprint $table) {
-            $table->boolean('active')->default(0)->after('password');
+        Schema::create('product', function (Blueprint $table) {
+            $table->id();
+            $table->string('product_image');
+            $table->string('product_name',50);
+            $table->text('product_description');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class AddActiveToUserTable extends Migration
      */
     public function down()
     {
-        Schema::table('user', function (Blueprint $table) {
-            $table->dropColumn('active');
-        });
+        Schema::dropIfExists('product');
     }
 }

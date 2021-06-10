@@ -18,29 +18,43 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('FileUplode', 'FileUplodeController@index');
+// Route::get('FileUplode', 'FileUplodeController@index');
 
-Route::post('uplode', 'FileUplodeController@uplode');
+// Route::post('uplode', 'FileUplodeController@uplode');
 
-Route::get('mail','EmailController@mail');  
+// Route::get('mail','EmailController@mail');  
 
-Route::post('email', 'EmailController@email');
+// Route::post('email', 'EmailController@email');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('user', 'UserController@user');
+// Route::get('user', 'UserController@user');
 
-Route::get('insert', 'UsersController@insert');
+// Route::get('insert', 'UsersController@insert');
 
-Route::post('insertpost', 'UsersController@insertpost')->name('insertpost');
+// Route::post('insertpost', 'UsersController@insertpost')->name('insertpost');
 
-Route::get('view', 'UsersController@fetch');
+// Route::get('view', 'UsersController@fetch');
 
-Route::get('edit/{id}', 'UsersController@edit');
+// Route::get('edit/{id}', 'UsersController@edit');
 
-Route::post('update', 'UsersController@update')->name('updatepost');
+// Route::post('update', 'UsersController@update')->name('updatepost');
 
-Route::get('delete/{id}', 'UsersController@delete');
+// Route::get('delete/{id}', 'UsersController@delete');
 
-Route::post('store/{id?}', 'UsersController@UpdateorInsert')->name('store');
+// Route::post('store/{id?}', 'UsersController@UpdateorInsert')->name('store');
+
+
+Route::get('index','UserContoller@index');
+
+Route::get('user','UserContoller@user');
+
+Route::get('inuser','UserContoller@inverseUser');
+
+Route::get('inproduct','UserContoller@inverseProduct');
+
+Route::get('product','UserContoller@product');
+
+Route::get('hasmany','UserContoller@HasMany');
+
 
