@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\FileUplodeController;
+use App\Http\Livewire\Userinformation;
+use App\Http\Livewire\Userdetail;
+use App\Http\Livewire\Userlist;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,16 +47,46 @@ use Illuminate\Support\Facades\Route;
 // Route::post('store/{id?}', 'UsersController@UpdateorInsert')->name('store');
 
 
-Route::get('index','UserContoller@index');
+// Route::get('index','UserContoller@index');
 
-Route::get('user','UserContoller@user');
+// Route::get('user','UserContoller@user');
 
-Route::get('inuser','UserContoller@inverseUser');
+// Route::get('inuser','UserContoller@inverseUser');
 
-Route::get('inproduct','UserContoller@inverseProduct');
+// Route::get('inproduct','UserContoller@inverseProduct');
 
-Route::get('product','UserContoller@product');
+// Route::get('product','UserContoller@product');
 
-Route::get('hasmany','UserContoller@HasMany');
+// Route::get('hasmany','UserContoller@HasMany');
+
+// Route::get('hasmany','HospitalController@hasMany');
+
+// Route::get('claims','HospitalController@claims');
+
+// Route::get('enc','HospitalController@encounters');
+
+// Route::get('index', 'MHospitalController@index');
+
+// Route::get('hospital', 'MHospitalController@Hospital');
+
+// Route::get('first','DemoController@First');
+
+// Route::get('second','DemoController@second');
+
+// Route::get('third','DemoController@third');
+
+// Route::get('fourth','DemoController@fourth');
+
+// Route::get('fifth','DemoController@fifth');
+
+// Route::get('sixth','DemoController@sixth');
+
+// Route::get('seven','DemoController@seven');
+
+Route::get('user', Userinformation::class);
+
+Route::get('userinfo', Userdetail::class);
+
+Route::get('userlist', Userlist::class);
 
 
