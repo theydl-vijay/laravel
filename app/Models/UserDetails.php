@@ -16,4 +16,9 @@ class UserDetails extends Model
         'age',
         'gender'
     ];
+
+    public function UserdetailsUserinfo()
+    {
+        return $this->belongsToMany(Userinfo::class);
+    }
 }

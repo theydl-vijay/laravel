@@ -2,37 +2,32 @@
 
 namespace App\Http\Livewire;
 use App\Models\UserDetails;
-use App\Http\Livewire\Userinformation;
+use App\Models\Userinfo;
 
 use Livewire\Component;
 
 class Userdetail extends Component
 {   
-    public $phone_number;
-    public $account_balance;
-    public $age;
-    public $gender;
+
     
     protected $rules = [
-        'phone_number' => 'required',
-        'account_balance' => 'required',
-        'age' => 'required',
-        // 'gender' => 'required'
+
+        
     ];
 
-    public function submit(Request $request){
-        $validatedata = $this->validate();
-        $details = UserDetails::create([
-            'phone_number' =>  $request->phone_number,
-            'account_balance' =>  $request->account_balance,
-            'age' =>  $request->age,
-            'user_id' => Auth::Userinformation()->id
-        ]);
+    public function submit(){
 
-        // $details->codec()->attach([codec_ids]);
+        function request(Request $request){
 
-        session()->flash('success');
+            $validatedata = $this->validate();
+            $details = UserDetails::create();
+            $user = Userinfo::find($request->$i);
+        }
+
+
+
         return redirect()->to('/userlist');
+        session()->flash('success');
     }
     
     public function render()

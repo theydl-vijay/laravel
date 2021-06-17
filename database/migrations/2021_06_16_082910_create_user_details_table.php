@@ -19,8 +19,8 @@ class CreateUserDetailsTable extends Migration
             $table->string('account_balance',50);
             $table->string('age',50);
             $table->enum('gender',['male','female']);
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('usere_info');
+            // $table->unsignedBigInteger('user_id');
+            $table->foreignId('user_id')->references('id')->on('user_info');
             $table->timestamps();
         });
     }

@@ -3,14 +3,14 @@
         <h4 class="my-4 text-center">CRUD Opration With livewire - User Info</h4>
         @if(session()->has('success'))
         <div class="alert alert-success alert-dismissible fade show w-75 mx-auto" role="alert">
-            <strong>Hello, {{$name}} !</strong> Your data has been submited
+            <strong>Hello, {{$name}} !</strong> Your data has been Updated
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         @endif
         <div class="jumbotron py-3 px-3 my-4 shadow text-capitalize">
             <h5 class="mx-1">Insert Data</h5>
             <form wire:submit.prevent="submit">
-                <input type="hidden" wire:model="id">
+                <input type="hidden" wire:model="id" value="{{$id}}">
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label class="form-label">name</label>

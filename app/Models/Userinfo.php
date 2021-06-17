@@ -9,10 +9,18 @@ class Userinfo extends Model
 {
     use HasFactory;
 
-    protected $table = 'usere_info';
+    protected $table = 'user_info';
     protected $fillable = [
         'name',
-        'email'
-        
+        'email',
+        'phone_number',
+        'account_balance',
+        'age',
+        'gender'
+    ];
+
+    const gender = [
+        'male' => 'male',
+        'female' => 'female'        
     ];
 }

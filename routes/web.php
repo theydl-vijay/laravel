@@ -89,4 +89,6 @@ Route::get('userinfo', Userdetail::class);
 
 Route::get('userlist', Userlist::class);
 
+Route::get('edit', Userinformation::class)->name('edit');
+
 
