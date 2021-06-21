@@ -10,7 +10,7 @@
         <div class="jumbotron py-3 px-3 my-4 shadow text-capitalize">
             <h5 class="mx-1">Insert Data</h5>
             <form wire:submit.prevent="submit">
-                <input type="hidden" wire:model="id">
+                <input type="hidden" wire:model="id" value="">
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label class="form-label">name</label>
@@ -60,7 +60,7 @@
                                 <label class="form-check-label">{{ $value }}</label>
                                 @endforeach
                             </div>
-                            @error('account_balance')
+                            @error('gender')
                             <span class="error text-danger">{{$message}}</span>
                             @enderror
                         </div>
